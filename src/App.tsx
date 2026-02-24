@@ -197,26 +197,17 @@ function About() {
         <p className="section-label reveal" ref={useReveal<HTMLParagraphElement>()}>Perfil</p>
         <div className="about-grid">
           <div className="about-photo reveal" ref={useReveal<HTMLDivElement>()}>
-            <div style={{
-              width: '100%',
-              height: '100%',
-              background: 'linear-gradient(135deg, #1a1a2e, #16213e)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              fontSize: '48px',
-              fontWeight: 900,
-              color: 'rgba(43, 79, 255, 0.2)',
-            }}>
-              N
-            </div>
+            <img
+              src="/images/nando-profile.jpg"
+              alt="Nando"
+            />
           </div>
           <div className="about-manifesto reveal reveal-delay-1" ref={useReveal<HTMLDivElement>()}>
             <h2>Olá, sou o Nando.</h2>
             <p>
-              Crio identidades visuais estratégicas para marcas que desejam se posicionar com
-              autenticidade. Combino pesquisa, conceito e design para construir sistemas visuais
-              que geram reconhecimento e confiança.
+              Acredito que marcas fortes não nascem na superfície. Elas começam no invisível, na intenção, no fundamento. Antes de pensar na forma, eu busco entender a essência.
+              <br /><br />
+              Meu trabalho é construir identidades visuais com profundidade. Cada projeto passa por pesquisa, estratégia e direção clara. Não é apenas estética. É estrutura que sustenta presença, gera confiança e faz sentido no longo prazo.
             </p>
             <div className="about-tags">
               <span>Brand Design</span>
@@ -235,8 +226,8 @@ function About() {
 const METHODS = [
   {
     num: '01',
-    title: 'Imersão',
-    desc: 'Pesquiso o mercado, o público e a essência da marca. Entendo o contexto antes de criar.',
+    title: 'Kai',
+    desc: 'Todo projeto começa com um mergulho. Aqui eu analiso a marca, o mercado, o público e os concorrentes. É o momento de observar, questionar e entender o cenário completo. Antes da forma, vem a compreensão.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="11" cy="11" r="8" /><path d="m21 21-4.3-4.3" />
@@ -245,8 +236,8 @@ const METHODS = [
   },
   {
     num: '02',
-    title: 'Conceito',
-    desc: 'Defino o posicionamento, o tom de voz e a direção visual com base na pesquisa.',
+    title: 'Shin',
+    desc: 'Com o contexto claro, aprofundamos. Organizo os insights e defino a direção estratégica da marca. Posicionamento, proposta de valor e personalidade começam a ganhar forma. Aqui encontramos o que realmente sustenta a identidade.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
@@ -255,8 +246,8 @@ const METHODS = [
   },
   {
     num: '03',
-    title: 'Criação',
-    desc: 'Desenvolvo o logotipo, a paleta, a tipografia e todos os elementos do sistema visual.',
+    title: 'Zou',
+    desc: 'Com base definida, começo a criar. Exploro formas, tipografia, cores e sistema visual. Rascunho, testo e lapido até que a solução represente com clareza a estratégia. Nada é aleatório. Tudo tem intenção.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 19l7-7 3 3-7 7-3-3z" /><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" /><path d="M2 2l7.586 7.586" /><circle cx="11" cy="11" r="2" />
@@ -265,8 +256,18 @@ const METHODS = [
   },
   {
     num: '04',
-    title: 'Entrega',
-    desc: 'Organizo o brandbook completo e todos os arquivos para aplicação profissional.',
+    title: 'Mei',
+    desc: 'Apresento o projeto mostrando aplicações reais e explicando cada decisão. A marca deixa de ser conceito e se torna presença. É o momento de enxergar o todo com clareza.',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" />
+      </svg>
+    ),
+  },
+  {
+    num: '05',
+    title: 'Kan',
+    desc: 'Finalizamos com organização e direção. Entrego os arquivos e o manual de uso para garantir consistência na aplicação. Uma marca forte precisa de fundamento para permanecer.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" />
@@ -286,9 +287,9 @@ function Methodology() {
             fazer as perguntas certas para revelar as respostas certas.
           </p>
         </div>
-        <div className="methodology-grid">
+        <div className="methodology-list">
           {METHODS.map((m, i) => (
-            <MethodCard key={i} {...m} delay={i} />
+            <MethodRow key={i} {...m} delay={i} />
           ))}
         </div>
       </div>
@@ -296,16 +297,18 @@ function Methodology() {
   )
 }
 
-function MethodCard({ num, title, desc, icon, delay }: {
+function MethodRow({ num, title, desc, icon, delay }: {
   num: string; title: string; desc: string; icon: React.ReactNode; delay: number
 }) {
   const ref = useReveal<HTMLDivElement>()
   return (
-    <div className={`method-card reveal reveal-delay-${delay + 1}`} ref={ref}>
-      <div className="card-icon">{icon}</div>
-      <span className="card-number">{num}</span>
-      <h3>{title}</h3>
-      <p>{desc}</p>
+    <div className={`method-row reveal reveal-delay-${delay + 1}`} ref={ref}>
+      <div className="row-number">{num}</div>
+      <div className="row-content">
+        <h3>{title}</h3>
+        <p>{desc}</p>
+      </div>
+      <div className="row-icon">{icon}</div>
     </div>
   )
 }
