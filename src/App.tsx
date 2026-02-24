@@ -73,10 +73,8 @@ function Header() {
   }, [menuOpen])
 
   const links = [
-    { label: 'Início', href: '#hero' },
+    { label: 'Home', href: '#hero' },
     { label: 'Projetos', href: '#projetos' },
-    { label: 'Sobre', href: '#sobre' },
-    { label: 'Metodologia', href: '#metodologia' },
     { label: 'Contato', href: '#contato' },
   ]
 
@@ -323,7 +321,7 @@ function CTA() {
           <h2>
             Quer dar à sua marca uma identidade visual que realmente comunica quem você é?
           </h2>
-          <a href="mailto:contato@nandographs.com" className="cta-link">
+          <a href="https://wa.me/554792330354" target="_blank" rel="noopener noreferrer" className="cta-link">
             Vamos conversar <span className="arrow">→</span>
           </a>
         </div>
@@ -342,9 +340,9 @@ function Footer() {
         </div>
         <div className="footer-bottom">
           <div className="footer-social">
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
-            <a href="https://behance.net" target="_blank" rel="noopener noreferrer">Behance</a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://www.instagram.com/nandographs/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="https://www.behance.net/nandographs" target="_blank" rel="noopener noreferrer">Behance</a>
+            <a href="https://www.linkedin.com/in/nando-graphs-70061239a/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
           </div>
           <p className="footer-copyright">© 2025 nandographs. Todos os direitos reservados.</p>
         </div>
