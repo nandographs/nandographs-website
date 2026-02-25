@@ -1,0 +1,166 @@
+/* ===========================
+   Project Template Page
+   =========================== */
+.project-page {
+    padding-top: 80px;
+    /* offset for header */
+}
+
+/* Hero Capa */
+.project-hero {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    min-height: 600px;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 80px;
+    overflow: hidden;
+}
+
+.project-hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.project-hero-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(10, 10, 10, 0.9) 0%, rgba(10, 10, 10, 0.2) 50%);
+    z-index: 1;
+}
+
+.project-hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.project-title {
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: #fff;
+}
+
+/* Informações */
+.project-info-section {
+    padding: 100px var(--container-padding);
+}
+
+.project-info-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 80px;
+    border-top: 1px solid var(--border-subtle);
+    padding-top: 80px;
+}
+
+@media (max-width: 900px) {
+    .project-info-grid {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+}
+
+.info-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.meta-label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+
+.meta-value {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.info-details {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.detail-item h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 24px;
+    letter-spacing: -0.02em;
+}
+
+.detail-item p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    max-width: 800px;
+}
+
+/* Galeria */
+.project-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding-bottom: 120px;
+}
+
+.gallery-img-full {
+    width: 100%;
+    border-radius: 12px;
+    height: auto;
+    object-fit: contain;
+}
+
+.gallery-grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+.gallery-grid-2 img {
+    width: 100%;
+    border-radius: 12px;
+    height: auto;
+    object-fit: contain;
+}
+
+@media (max-width: 768px) {
+    .gallery-grid-2 {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Próximos Projetos (More Projects) */
+.more-projects {
+    padding-bottom: 120px;
+}
+
+.more-projects-title {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    text-align: center;
+    margin-bottom: 40px;
+}
