@@ -35,5 +35,5 @@ jobs:
           port: 21
           # security: strict # A Hostinger muitas vezes exige FTPS explícito, mas se "ftp" falhar, forçamos "strict" em um segundo teste.
           local-dir: ./dist/ # A pasta gerada pelo build do Vite
-          server-dir: ./public_html/ # A pasta pública da sua Hostinger
+          server-dir: ./ # A Hostinger já joga esse usuário FTP dentro da public_html por padrão
           dangerous-clean-slate: false # Mude para true se quiser que a action apague arquivos antigos do servidor antes de subir os novos
